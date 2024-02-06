@@ -1,5 +1,5 @@
 """
-URL configuration for tutorial_project project.
+URL configuration for firebase_django_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -20,6 +20,15 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.signin),
-    path('postsign/', views.postsign)
+    path('', views.signIn, name='signin'),
+    path('postsignIn/', views.postsignIn),
+    path('signUp/', views.signUp, name='signup'),
+    path('logout/', views.logout, name='logout'),
+    path('postsignUp/', views.postsignUp),
+    path('home/', views.home, name='home'),
+    path('reset/', views.reset),
+    path('postReset/', views.postReset),
+    path('add_item/', views.add_item, name='add_item'),
+    path('add_item_form/', views.add_item_form),
+    path('get_item_link_form/', views.get_item_link_form)
 ]

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+{% if message %}
+<script>
+    window.alert("{{message}}");
+</script>
+{% endif %}
+
+<html lang="en">
+    <head>
+        <meta charset="'UTF-8">
+        <title>Reset Password</title>
+    </head>
+    <body>
+        <h1>
+            Reset Password 
+        </h1>
+        <br/><br/>
+        <form action="/postReset/" method="POST">
+            <input type="email" id="email" placeholder="example@gmai.com">
+            <input type="submit" value="Send Reset Link"><br><br>
+            <a href="/">Go to login</a>
+        </form>
+    </body>
+</html>

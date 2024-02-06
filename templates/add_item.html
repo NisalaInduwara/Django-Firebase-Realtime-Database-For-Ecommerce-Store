@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Item</title>
+    </head>
+    <body>
+        <form action="/add_item_form/" method="post">
+            {% csrf_token %}
+            <br/>
+            <h1>Add Your New Item Here</h1>
+
+            <!--Enter Your username-->
+            <label for="item_id">Item Id</label>
+            <input type="text" id="item_id" name="item_id" placeholder="12345678"><br><br>
+
+            <!--Enter Your Email-->
+            <label for="item_link">Item Link</label>
+            <input type="text" id="item_link" name="item_link" placeholder="https://www.aliexpress.com/item/3256801688033065"><br><br>
+
+            <!--Enter Your Password-->
+            <label for="item_name">Item Name</label>
+            <input type="text" id="item_name" name="item_name"><br><br>
+
+            <!--Confirm Your Password-->
+            <label for="item_profit">Profit</label>
+            <input type="number" id="item_profit" name="item_profit"><br><br>
+
+            <!--Confirm Your Password-->
+            <label for="description">Item Description</label>
+            <input type="text" id="description" name="description"><br><br>
+            
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me 
+            </label>
+            <input type="submit" value="Add"><br><br>
+
+            <button type="button" onclick="location.href='{% url 'home' %}'">Cancel</button>
+        </form>
+    </body>
+</html>

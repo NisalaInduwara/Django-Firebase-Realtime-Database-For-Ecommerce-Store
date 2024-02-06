@@ -1,0 +1,32 @@
+{% if message %}
+<script>
+    alert("{{message}}");
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="'UTF-8">
+        <title>home</title>
+    </head>
+    <body>
+        <h1>
+            Anu Stores Items Database
+        </h1>
+        <div>
+            <form action="/get_item_link_form/" method="get">
+                {% csrf_token %}
+                <br/>
+                <!--Enter Item ID-->
+                <label for="item_id">Item ID</label>
+                <input type="text" id="item_id" name="item_id" placeholder="123456">
+                <input type="submit" value="Search"><br><br>
+            </form>
+            {% if item_link %}
+                <p>Item Link: {{ item_link }}</p>
+                {% endif %}
+            <button type="button" onclick="location.href='{% url 'logout'%}'">Logout</button>
+            <button type="button" onclick="location.href='{% url 'add_item' %}'">Add</button>
+        </div>
+    </body>
+</html>
